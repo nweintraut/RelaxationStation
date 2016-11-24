@@ -11,8 +11,8 @@ class Quote extends Component {
 
 		return (
 			<View>
-				<Text style={styles.qouteText}>{this.props.quoteText}</Text>
-				<Text style={styles.sourceText}>{this.props.quoteSource}</Text>
+				<Text style={styles.qouteText}>"{this.props.quoteText}"</Text>
+				<Text style={styles.sourceText}>- {this.props.quoteSource}</Text>
 			</View>
 		)
 	}
