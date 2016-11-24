@@ -14,7 +14,7 @@ export default class RelaxationStation extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => {alert('I was pressed!')} }>
           <Image source={zenImage} style={styles.buttonImage} />
         </TouchableOpacity>
         <Text style={styles.readyText}>I'm ready to relax...</Text>
