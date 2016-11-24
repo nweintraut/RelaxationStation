@@ -16,8 +16,14 @@ const {quotes} = require('./quotes.json');
 const zenImage = require('./assets/zen.png');
 
 class RelaxationStation extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      quoteIndex: 3,
+    }
+  }
   render() {
-    const quote = quotes[2];
+    const quote = quotes[this.state.quoteIndex];
     return (
       <Navigator
         initialRoute={{name: 'StartScreen'}}
