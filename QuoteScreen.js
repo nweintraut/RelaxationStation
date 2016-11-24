@@ -7,8 +7,9 @@ import {
   TouchableOpacity,
   RCTAnimation,
 } from 'react-native';
-import Quote from './quote'
+import Quote from './quote';
 const bgImage = require('./assets/pv.png');
+import NextQuoteButton from './NextQuoteButton';
 
 class QuoteScreen extends Component {
   render() {
@@ -16,6 +17,7 @@ class QuoteScreen extends Component {
       <Image source={bgImage} style={styles.backgroundContainer}>
           <View style={styles.container}>
             <Quote quoteText={this.props.text} quoteSource={this.props.source} />
+            <NextQuoteButton />
         </View>
       </Image>
 

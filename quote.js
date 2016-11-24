@@ -10,7 +10,7 @@ class Quote extends Component {
 	render() {
 
 		return (
-			<View>
+			<View style={styles.quoteContainer}>
 				<Text style={styles.qouteText}>"{this.props.quoteText}"</Text>
 				<Text style={styles.sourceText}>- {this.props.quoteSource}</Text>
 			</View>
@@ -23,6 +23,10 @@ Quote.propTypes = {
   quoteSource: PropTypes.string.isRequired
 }
 const styles = StyleSheet.create({
+  quoteContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   qouteText: {
     fontFamily: (Platform.OS === 'ios') ? 'AvenirNext-Bold' : 'Roboto',
     fontSize: 36,
