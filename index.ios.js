@@ -26,7 +26,7 @@ class RelaxationStation extends Component {
             case 'StartScreen':
               return <StartScreen onStartHandler={() => navigator.push({ name: 'QuoteScreen'})}/>
             case 'QuoteScreen':
-              return <QuoteScreen text="elmo" source={quote.source}/>
+              return <QuoteScreen text={quote.text} source={quote.source}/>
           }
         }}
         />
