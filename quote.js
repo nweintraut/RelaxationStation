@@ -18,7 +18,7 @@ class Quote extends Component {
 }
 
 Quote.propTypes = {
-  text: PropTypes.string.isRequired,
-  source: PropTypes.string.isRequied
+  quoteText: PropTypes.string.isRequired,
+  quoteSource: PropTypes.string.isRequired
 }
 export default Quote

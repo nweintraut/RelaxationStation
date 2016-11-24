@@ -8,19 +8,23 @@ import {
   RCTAnimation,
 } from 'react-native';
 import Quote from './quote'
+const bgImage = require('./assets/pv.png');
 
 class QuoteScreen extends Component {
   render() {
     return (
-        <View style={styles.container}>
-          <Quote quoteText={this.props.text} quoteSource={this.props.source} />
+      <Image source={bgImage} style={styles.backgroundContainer}>
+          <View style={styles.container}>
+            <Quote quoteText={this.props.text} quoteSource={this.props.source} />
         </View>
+      </Image>
+
     );
   }
 }
 QuoteScreen.propTypes = {
   text: PropTypes.string.isRequired,
-  source: PropTypes.string.isRequied
+  source: PropTypes.string.isRequired
 }
 
 const styles = StyleSheet.create({
@@ -28,7 +32,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#efefef',
+  },
+  backgroundContainer: {
+    flex: 1,
+    resizeMode: 'cover',
+    width: undefined,
+    height: undefined
   },
 });
 
