@@ -6,17 +6,24 @@ import {
   View,
   TouchableOpacity,
   RCTAnimation,
+  LayoutAnimation
 } from 'react-native';
 import Quote from './quote';
 const bgImage = require('./assets/pv.png');
 import NextQuoteButton from './NextQuoteButton';
+const tranquil = {
+  
+}
 
 class QuoteScreen extends Component {
+  componentWillUpdate() {
+    LayoutAnimation.spring()
+  }
   render() {
     return (
       <Image source={bgImage} style={styles.backgroundContainer}>
           <View style={styles.container}>
-            <Quote quoteText={this.props.text} quoteSource={this.props.source} />
+            <Quote key={this.props.qID} quoteText={this.props.text} quoteSource={this.props.source} />
             <NextQuoteButton onPress={this.props.onNextQuotePress} />
         </View>
       </Image>
@@ -27,7 +34,8 @@ class QuoteScreen extends Component {
 QuoteScreen.propTypes = {
   text: PropTypes.string.isRequired,
   source: PropTypes.string.isRequired,
-  onNextQuotePress: PropTypes.func.isRequired
+  onNextQuotePress: PropTypes.func.isRequired,
+  qID: PropTypes.number.isRequired
 }
 
 const styles = StyleSheet.create({
