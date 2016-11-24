@@ -12,12 +12,27 @@ import Quote from './quote';
 const bgImage = require('./assets/pv.png');
 import NextQuoteButton from './NextQuoteButton';
 const tranquil = {
-  
+  duration: 500,
+  create: {
+    duration: 1000,
+    delay: 300,
+    type: LayoutAnimation.Types.easeIn,
+    property: LayoutAnimation.Properties.opacity,
+  },
+  update: {
+    type: LayoutAnimation.Types.easeInEaseOut,
+    property: LayoutAnimation.Properties.opacity,
+  },
+  delete: {
+    duration: 200,
+    type: LayoutAnimation.Types.easeOut,
+    property: LayoutAnimation.Properties.opacity,
+  },
 }
 
 class QuoteScreen extends Component {
   componentWillUpdate() {
-    LayoutAnimation.spring()
+    LayoutAnimation.configureNext(tranquil)
   }
   render() {
     return (
