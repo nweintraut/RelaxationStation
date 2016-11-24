@@ -17,7 +17,7 @@ class QuoteScreen extends Component {
       <Image source={bgImage} style={styles.backgroundContainer}>
           <View style={styles.container}>
             <Quote quoteText={this.props.text} quoteSource={this.props.source} />
-            <NextQuoteButton />
+            <NextQuoteButton onPress={this.props.onNextQuotePress} />
         </View>
       </Image>
 
@@ -26,7 +26,8 @@ class QuoteScreen extends Component {
 }
 QuoteScreen.propTypes = {
   text: PropTypes.string.isRequired,
-  source: PropTypes.string.isRequired
+  source: PropTypes.string.isRequired,
+  onNextQuotePress: PropTypes.func.isRequired
 }
 
 const styles = StyleSheet.create({
